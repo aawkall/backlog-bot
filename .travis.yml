@@ -1,20 +1,18 @@
 language: node_js
 node_js:
   '10'
-
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+dist: trusty
+sudo: false
 
 cache:
   directories:
-    - ./node_modules
+    - node_modules
 
-install:
-  - npm install
+addons:
+  chrome: stable
 
 script:
-  - npm run test -- --watch=false --browsers=ChromeHeadlessNoSandbox
+  - npm run lint
+  - npm run test:headless
+  - npm run build
+  - xvfb-run npm run e2e
