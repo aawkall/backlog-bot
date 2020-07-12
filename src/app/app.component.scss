@@ -3,17 +3,37 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .options {
+  padding-top: 50px;
   display: flex;
   justify-content: space-between;
   width: 20%;
-  min-width: 50px;
+  min-width: 175px !important;
   max-width: 200px;
 }
 
 .logo {
   line-height: 75%;
+  min-width: 275px;
 }
+
+header {
+  background-image: url('../assets/images/background-angles.png');
+  background-size: 100% 70%;
+  background-repeat: no-repeat;
+}
+
+.header-slope {
+  background-color: rgba(66, 94, 94, 0.5);
+  clip-path: polygon(
+    0 0, // left-top
+    100% 0%, // right-top
+    100% 100%, // right-bottom
+    0 70% // left-bottom
+  );
+}
+

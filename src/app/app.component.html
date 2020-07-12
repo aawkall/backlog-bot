@@ -1,14 +1,17 @@
 <header>
-  <section class="header-section">
-    <div class="display-3 logo">
-      backlog<br>
-      <span class="accent-teal">bot</span>
-    </div>
-    <h2 class="options">
-      <span routerLink="/home" routerLinkActive="active">home</span>
-      <span routerLink="/new-book" routerLinkActive="active">new book</span>
-    </h2>
-  </section>
+  <div class="header-slope">
+    <section class="header-section">
+      <h2 class="mt-2 logo text-white">
+        <fa-icon [icon]="faBook" size="sm"></fa-icon>
+        <span class="ml-3">backlog </span>
+        <span>bot</span>
+      </h2>
+      <h4 class="options">
+        <span routerLink="/home" routerLinkActive="active">home</span>
+        <span routerLink="/new-book" routerLinkActive="active">new book</span>
+      </h4>
+    </section>
+  </div>
 </header>
 
 <router-outlet></router-outlet>
