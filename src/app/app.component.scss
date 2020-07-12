@@ -1,0 +1,19 @@
+.header-section {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  min-width: 50px;
+  max-width: 200px;
+}
+
+.logo {
+  line-height: 75%;
+}
