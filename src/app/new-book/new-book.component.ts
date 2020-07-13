@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-new-book',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
+    // Ensure that clicking a router-link for this component always reloads
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.router.navigated = false;
+        window.scrollTo(0, 0);
+      }
+    });
   }
-
 }

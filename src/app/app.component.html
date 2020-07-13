@@ -1,14 +1,14 @@
 <header>
   <div class="header-slope">
     <section class="header-section">
-      <h2 class="mt-2 logo text-white">
+      <h2 class="mt-2 logo text-white router-link" routerLink="/home">
         <fa-icon [icon]="faBook" size="sm"></fa-icon>
         <span class="ml-3">backlog </span>
         <span>bot</span>
       </h2>
       <h4 class="options">
-        <span routerLink="/home" routerLinkActive="active">home</span>
-        <span routerLink="/new-book" routerLinkActive="active">new book</span>
+        <span class="router-link" routerLink="/home" routerLinkActive="active">home</span>
+        <span class="router-link" routerLink="/new-book" routerLinkActive="active">new book</span>
       </h4>
     </section>
   </div>
@@ -16,7 +16,6 @@
 
 <router-outlet></router-outlet>
 
-<footer>
-  Shows at bottom of all pages
-  <br>
+<footer class="footer">
+  <span class="text-muted">Footer text here</span>
 </footer>

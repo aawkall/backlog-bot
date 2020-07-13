@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 import {BookType} from '../shared/models/book-type.model';
 
@@ -15,15 +16,24 @@ export class HomeComponent implements OnInit {
   // cover image variable? path? uri?
   percentageComplete: number;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
+
+    // Ensure that clicking a router-link for this component always reloads
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.router.navigated = false;
+        window.scrollTo(0, 0);
+      }
+    });
+
     // For now, initialize with dummy data to work on formatting
     // Image can also be hardcoded from the assets folder
-
     this.currentTitle = 'The Fifth Season';
     this.currentAuthor = 'N. K. Jemisin';
     this.bookType = BookType.Fiction;
-    this.percentageComplete = 82;
+    this.percentageComplete = Math.floor(Math.random() * Math.floor(100));
   }
 }
