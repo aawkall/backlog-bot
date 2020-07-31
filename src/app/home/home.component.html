@@ -1,14 +1,23 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1>{{ currentTitle }}</h1>
-<h1 class="accent-grey">{{ currentAuthor }}</h1>
-<h1>{{ bookType }}</h1>
-<h1>{{ percentageComplete }}%</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div>
+    <section class="page-title">
+        <h1>currently <span class="accent-teal">reading</span></h1>
+    </section>
+    <section class="book-info">
+        <div class="book-info">
+            <div class="col border">
+                <h1>{{ currentBook.title }}</h1>
+                <h3 class="accent-teal">{{ currentBook.author }}</h3>
+                <br>
+                <h3>{{ currentBook.bookType }}</h3>
+                <p>page {{ currentBook.currentPage }} / {{ currentBook.totalPages }}</p>
+                <progress class="float-left" max="100" value="{{ currentBook.percentageComplete }}"></progress>
+                <h4 class="float-left ml-4">{{ currentBook.percentageComplete }}%</h4>
+                <button mat-flat-button class="teal-button">Finished?</button>
+                <button mat-flat-button class="teal-button ml-4">Put on Hold</button>
+            </div>
+            <div class="col border">
+                <img class="book-cover" src="{{ currentBook.coverUrl }}" alt="{{ currentBook.title }}">
+            </div>
+        </div>
+    </section>
+</div>

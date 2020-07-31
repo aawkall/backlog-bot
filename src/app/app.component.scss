@@ -17,8 +17,11 @@
 }
 
 .logo {
-  line-height: 75%;
   min-width: 275px;
+  cursor: pointer;
+}
+.logo:focus {
+  outline: none;
 }
 
 header {
